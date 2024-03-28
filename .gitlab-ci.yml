@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build_react:
+  stage: build
+  image: node:20
+  script:
+    - cd Collibri
+    - npm install
+    - CI=false npm run build
+
+build_dotnet:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  script:
+    - dotnet restore
+    - dotnet build
+
+test_app:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  script:
+    - dotnet test
