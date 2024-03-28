@@ -1,21 +1,26 @@
+image: mcr.microsoft.com/dotnet/sdk:6.0
+
 stages:
   - build
   - test
+
+variables:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
+  DOTNET_NOLOGO: 'true'
 
 before_script:
   - 'dotnet --version'
 
 build:
   stage: build
-  image: mcr.microsoft.com/dotnet/sdk:6.0
   script:
-    - dotnet restore /Collibri.Tests
-    - dotnet build /Collibri.Tests --no-restore'
+    - 'dotnet restore \Collibri\Collibri.csproj' 
+    - 'dotnet build \Collibri\Collibri.csproj --no-restore'
   only:
     - main
 
 test:
   stage: test
-  image: mcr.microsoft.com/dotnet/sdk:6.0
   script:
-    - dotnet test /Collibri.Tests --no-restore --verbosity normal
+    - 'dotnet test  \Collibri\Collibri.csproj --verbosity normal'
