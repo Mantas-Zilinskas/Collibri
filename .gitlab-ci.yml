@@ -2,30 +2,20 @@ stages:
   - build
   - test
 
-build_react:
-  stage: build
-  image: node:20
-  script:
-    - cd Collibri
-    - npm install
-    - CI=false npm run build
-  artifacts:
-    paths:
-      - Collibri/build
+before_script:
+  - 'dotnet --version'
 
-build_dotnet:
+build:
   stage: build
   image: mcr.microsoft.com/dotnet/sdk:6.0
   script:
-    - dotnet restore
-    - dotnet build --no-restore -c Release
-  artifacts:
-    paths:
-      - bin/
+    - dotnet restore /Collibri.Tests
+    - dotnet build /Collibri.Tests --no-restore'
+  only:
+    - main
 
-test_app:
+test:
   stage: test
   image: mcr.microsoft.com/dotnet/sdk:6.0
   script:
-    - dotnet test
-
+    - dotnet test /Collibri.Tests --no-restore --verbosity normal
