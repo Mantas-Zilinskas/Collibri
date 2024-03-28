@@ -1,26 +1,25 @@
-image: mcr.microsoft.com/dotnet/sdk:6.0
-
 stages:
   - build
   - test
 
-variables:
-  DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
-  DOTNET_NOLOGO: 'true'
-
-before_script:
-  - 'dotnet --version'
-
 build:
   stage: build
   script:
-    - 'dotnet restore \Collibri\Collibri.csproj' 
-    - 'dotnet build \Collibri\Collibri.csproj --no-restore'
-  only:
-    - main
+    - 'dotnet publish -c Release -o ./publish'
+    - 'cd Collibri/ClientApp'
+    - 'npm install'
+    - 'npm run build'
+    - 'cd ../..'
+  artifacts:
+    paths:
+      - publish/
+      - Collibri/ClientApp/build/
 
 test:
   stage: test
   script:
-    - 'dotnet test  \Collibri\Collibri.csproj --verbosity normal'
+    - 'dotnet test Collibri.Tests/Collibri.Tests.csproj --results-directory ./testresults'
+  artifacts:
+    reports:
+      junit: ./testresults/*.xml
+    when: always
