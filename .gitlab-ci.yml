@@ -1,36 +1,59 @@
+image: mcr.microsoft.com/dotnet/core/sdk:3.1
+
 stages:
   - build
   - test
   - deploy
 
 variables:
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .nuget/packages
+    - **/*/bin/
+    - **/*/obj/
 
 before_script:
-  - 'dotnet restore'
+  - dotnet restore Collibri.sln
 
-build:
+build_job:
   stage: build
   script:
-    - 'dotnet build --no-restore'
+    - dotnet build Collibri.sln -c Release --no-restore
   artifacts:
+    expire_in: 1 hour
     paths:
-      - bin/
-      - obj/
+      - '**/*/bin/Release'
+      - '**/*/obj/Release'
 
-test:
+test_job:
   stage: test
   script:
-    - 'dotnet test --no-restore --verbosity normal'
+    - dotnet test Collibri.sln --no-restore --no-build --logger "trx;LogFileName=test_results.xml"
   artifacts:
-    when: always
     reports:
-      junit: TestResults/*.xml
+      junit: "**/TestResults/*.xml"
+    expire_in: 1 hour
+    when: always
 
-deploy:
+deploy_job:
   stage: deploy
   script:
-    - echo "Deploy your application here"
+    - dotnet publish Collibri.sln -c Release -o ./publish
+    - |
+      if [ "$CI_COMMIT_BRANCH" == "master" ]; then
+        # Example deployment script; customize with your real deployment commands
+        echo "Deploying to production server"
+        scp -r ./publish user@your-production-server:/path/to/deployment
+      else
+        echo "Skipping deployment for branch $CI_COMMIT_BRANCH"
+      fi
+  environment:
+    name: production
+    url: http://your-production-server/path/to/application
   only:
     - master
+  when: manual
