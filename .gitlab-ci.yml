@@ -1,4 +1,5 @@
 stages:
+  - restore
   - build
   - test
   - deploy
@@ -6,47 +7,47 @@ stages:
 variables:
   PROJECT_NAME: 'Collibri'
   BUILD_CONFIGURATION: 'Release'
-  DOTNET_CORE_SDK_VERSION: '7.0' # Specify the version you're using
+  DOTNET_CORE_SDK_VERSION: '7.0' # This should match the SDK version used in the project
+
+restore:
+  stage: restore
+  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
+  script:
+    - 'dotnet restore ${PROJECT_NAME}.sln' # Restores packages for the solution
 
 build:
   stage: build
-  tags: 
-    - amma
   image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
     - 'dotnet build ${PROJECT_NAME} --configuration ${BUILD_CONFIGURATION} --no-restore'
+  artifacts:
+    paths:
+      - '**/bin/${BUILD_CONFIGURATION}/**'
+    expire_in: 1 hour
 
 test:
   stage: test
-  tags: 
-    - amma
   image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
     - 'dotnet test ${PROJECT_NAME}.Tests --no-build --verbosity normal'
   artifacts:
-    when: always
     reports:
-      junit: TestResults/**/*.xml
+      junit: '**/TestResults/**/*.xml'
     expire_in: 1 week
 
 deploy_staging:
   stage: deploy
-  tags: 
-    - amma
   script:
     - 'echo "Deploy to staging environment"'
-    # Add deployment scripts for staging
+    # Add deployment scripts here, typically might include scripts to push to a testing server
   only:
     - develop
 
 deploy_production:
   stage: deploy
-  tags: 
-    - amma
   script:
     - 'echo "Deploy to production environment"'
-    # Add deployment scripts for production
+    # Add deployment scripts here, typically might involve production deployment scripts
   only:
-    - main # Assuming 'main' is your default production branch
-  when: manual # Require manual trigger for production deployment
-
+    - main # Adjusted to 'main', typical default branch name for production
+  when: manual # Requires a manual trigger for deployment
