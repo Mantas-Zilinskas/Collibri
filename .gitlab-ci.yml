@@ -1,59 +1,52 @@
-image: mcr.microsoft.com/dotnet/core/sdk:3.1
-
 stages:
   - build
   - test
   - deploy
 
 variables:
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "true"
-  DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+  PROJECT_NAME: 'Collibri'
+  BUILD_CONFIGURATION: 'Release'
+  DOTNET_CORE_SDK_VERSION: '7.0' # Specify the version you're using
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - .nuget/packages
-    - **/*/bin/
-    - **/*/obj/
-
-before_script:
-  - dotnet restore Collibri.sln
-
-build_job:
+build:
   stage: build
+  tags: 
+    - amma
+  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
-    - dotnet build Collibri.sln -c Release --no-restore
-  artifacts:
-    expire_in: 1 hour
-    paths:
-      - '**/*/bin/Release'
-      - '**/*/obj/Release'
+    - 'dotnet build ${PROJECT_NAME} --configuration ${BUILD_CONFIGURATION} --no-restore'
 
-test_job:
+test:
   stage: test
+  tags: 
+    - amma
+  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
-    - dotnet test Collibri.sln --no-restore --no-build --logger "trx;LogFileName=test_results.xml"
+    - 'dotnet test ${PROJECT_NAME}.Tests --no-build --verbosity normal'
   artifacts:
-    reports:
-      junit: "**/TestResults/*.xml"
-    expire_in: 1 hour
     when: always
+    reports:
+      junit: TestResults/**/*.xml
+    expire_in: 1 week
 
-deploy_job:
+deploy_staging:
   stage: deploy
+  tags: 
+    - amma
   script:
-    - dotnet publish Collibri.sln -c Release -o ./publish
-    - |
-      if [ "$CI_COMMIT_BRANCH" == "master" ]; then
-        # Example deployment script; customize with your real deployment commands
-        echo "Deploying to production server"
-        scp -r ./publish user@your-production-server:/path/to/deployment
-      else
-        echo "Skipping deployment for branch $CI_COMMIT_BRANCH"
-      fi
-  environment:
-    name: production
-    url: http://your-production-server/path/to/application
+    - 'echo "Deploy to staging environment"'
+    # Add deployment scripts for staging
   only:
-    - master
-  when: manual
+    - develop
+
+deploy_production:
+  stage: deploy
+  tags: 
+    - amma
+  script:
+    - 'echo "Deploy to production environment"'
+    # Add deployment scripts for production
+  only:
+    - main # Assuming 'main' is your default production branch
+  when: manual # Require manual trigger for production deployment
+
