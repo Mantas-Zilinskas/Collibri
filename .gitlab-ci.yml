@@ -1,5 +1,4 @@
 stages:
-  - restore
   - build
   - test
   - deploy
@@ -8,12 +7,6 @@ variables:
   PROJECT_NAME: 'Collibri'
   BUILD_CONFIGURATION: 'Release'
   DOTNET_CORE_SDK_VERSION: '7.0'
-
-restore:
-  stage: restore
-  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
-  script:
-    - 'dotnet restore ${PROJECT_NAME}.sln'
 
 build:
   stage: build
