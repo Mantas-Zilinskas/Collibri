@@ -4,48 +4,33 @@ stages:
   - deploy
 
 variables:
-  PROJECT_NAME: 'Collibri'
-  BUILD_CONFIGURATION: 'Release'
-  DOTNET_CORE_SDK_VERSION: '7.0' # Specify the version you're using
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+before_script:
+  - 'dotnet restore'
 
 build:
   stage: build
-  tags: 
-    - amma
-  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
-    - 'npm run build'
+    - 'dotnet build --no-restore'
+  artifacts:
+    paths:
+      - bin/
+      - obj/
 
 test:
   stage: test
-  tags: 
-    - amma
-  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
-    - 'dotnet test ${PROJECT_NAME}.Tests --no-build --verbosity normal'
+    - 'dotnet test --no-restore --verbosity normal'
   artifacts:
     when: always
     reports:
-      junit: TestResults/**/*.xml
-    expire_in: 1 week
+      junit: TestResults/*.xml
 
-deploy_staging:
+deploy:
   stage: deploy
-  tags: 
-    - amma
   script:
-    - 'echo "Deploy to staging environment"'
-    # Add deployment scripts for staging
+    - echo "Deploy your application here"
   only:
-    - develop
-
-deploy_production:
-  stage: deploy
-  tags: 
-    - amma
-  script:
-    - 'echo "Deploy to production environment"'
-    # Add deployment scripts for production
-  only:
-    - main # Assuming 'main' is your default production branch
-  when: manual # Require manual trigger for production deployment
+    - master
