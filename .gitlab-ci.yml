@@ -6,7 +6,7 @@ stages:
 variables:
   PROJECT_NAME: 'Collibri'
   BUILD_CONFIGURATION: 'Release'
-  DOTNET_CORE_SDK_VERSION: '6.0' # Specify the version you're using
+  DOTNET_CORE_SDK_VERSION: '7.0' # Specify the version you're using
 
 build:
   stage: build
@@ -14,7 +14,7 @@ build:
     - amma
   image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
-    - 'dotnet build ${PROJECT_NAME} --configuration ${BUILD_CONFIGURATION} --no-restore'
+    - 'dotnet build'
 
 test:
   stage: test
