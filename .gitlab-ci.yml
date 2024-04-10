@@ -14,7 +14,7 @@ build:
     - amma
   image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
   script:
-    - 'dotnet build'
+    - 'npm run build'
 
 test:
   stage: test
