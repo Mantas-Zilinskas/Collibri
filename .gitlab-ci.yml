@@ -1,44 +1,37 @@
 stages:
   - build
   - test
-  - deploy
 
 variables:
-  PROJECT_NAME: 'Collibri'
-  BUILD_CONFIGURATION: 'Release'
-  DOTNET_CORE_SDK_VERSION: '7.0'
+  SOLUTION_NAME: "Collibri.sln" 
+  TEST_PROJECT: "Collibri.Tests/Collibri.Tests.csproj"  
 
-build:
+build_job:
   stage: build
-  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
+  image: mcr.microsoft.com/dotnet/sdk:7.0
+  tags:
+    - amma
+  before_script:
+    - apt-get update -yq
+    - apt-get install -yq nodejs npm
+    - node --version
+    - npm --version
   script:
-    - 'dotnet build ${PROJECT_NAME} --configuration ${BUILD_CONFIGURATION} --no-restore'
-  artifacts:
-    paths:
-      - '**/bin/${BUILD_CONFIGURATION}/**'
-    expire_in: 1 hour
+    - echo "Building the project..."
+    - dotnet build $SOLUTION_NAME
 
-test:
+test_job:
   stage: test
-  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_CORE_SDK_VERSION}
+  image: mcr.microsoft.com/dotnet/sdk:7.0
+  tags:
+    - amma
+  before_script:
+    - apt-get update -yq
+    - apt-get install -yq nodejs npm
+    - node --version
+    - npm --version
+    - npm i --package-lock-only
   script:
-    - 'dotnet test ${PROJECT_NAME}.Tests --no-build --verbosity normal'
-  artifacts:
-    reports:
-      junit: '**/TestResults/**/*.xml'
-    expire_in: 1 week
-
-deploy_staging:
-  stage: deploy
-  script:
-    - 'echo "Deploy to staging environment"'
-  only:
-    - develop
-
-deploy_production:
-  stage: deploy
-  script:
-    - 'echo "Deploy to production environment"'
-  only:
-    - main
-  when: manual
+    - echo "Running .NET tests..."
+    - dotnet restore
+    - dotnet test "$TEST_PROJECT"  
