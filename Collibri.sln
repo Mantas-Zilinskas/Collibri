@@ -1,12 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collibri", "Collibri\Collibri.csproj", "{49711352-2B7A-4DEB-8607-9F3FA5D0F822}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collibri", "Collibri\Collibri.csproj", "{49711352-2B7A-4DEB-8607-9F3FA5D0F822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collibri.Tests", "Collibri.Tests\Collibri.Tests.csproj", "{6D18782F-CC2C-4E91-BAEF-1B00299531D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collibri.Tests", "Collibri.Tests\Collibri.Tests.csproj", "{6D18782F-CC2C-4E91-BAEF-1B00299531D7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{87ADE80A-B370-4800-A80B-8672D1DC9E1D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C3A7122A-8B57-480D-84FB-58849776CDC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz_API", "Quiz API\Quiz_API.csproj", "{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0B5A5054-34E9-4651-A094-DA124B1C76FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,9 +29,20 @@ Global
 		{6D18782F-CC2C-4E91-BAEF-1B00299531D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D18782F-CC2C-4E91-BAEF-1B00299531D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D18782F-CC2C-4E91-BAEF-1B00299531D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{49711352-2B7A-4DEB-8607-9F3FA5D0F822} = {87ADE80A-B370-4800-A80B-8672D1DC9E1D}
 		{6D18782F-CC2C-4E91-BAEF-1B00299531D7} = {C3A7122A-8B57-480D-84FB-58849776CDC0}
+		{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D} = {0B5A5054-34E9-4651-A094-DA124B1C76FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D318FBAB-CCBF-4407-BC2D-F915B14AA2A4}
 	EndGlobalSection
 EndGlobal
