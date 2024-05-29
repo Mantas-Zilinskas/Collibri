@@ -50,7 +50,6 @@ namespace Quiz_API.Repositories
             Quiz OldQuiz = await _context.Quizes.FindAsync(id);
             OldQuiz.Description = quiz.Description;
             OldQuiz.Name = quiz.Name;
-            OldQuiz.RoomId = quiz.RoomId;
             await _context.SaveChangesAsync();
             return;
         }
