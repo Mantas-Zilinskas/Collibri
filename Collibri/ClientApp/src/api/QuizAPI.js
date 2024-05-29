@@ -52,7 +52,51 @@ export const createQuiz = (quizName, quizDescription, roomId, setQuizes) => {
             console.error('Error posting section:', error);
             // Display an error message to the user interface
         });
+}
 
+export const addQuestion = (question) => {
+    fetch('https://localhost:7176/api/Question/Add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: question.id,
+            quizId: question.quizId,
+            name: question.name,
+            questionText: question.questionText,
+            type: question.type
+        }),
+    })
+        .then(
+            console.log("question added")
+        )
+        .catch(error => {
+            console.error('Error posting section:', error);
+            // Display an error message to the user interface
+        });
+}
+
+export const addAnswer = async (answer) => {
+    await fetch('https://localhost:7176/api/Answer/Add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: answer.id,
+            questionId: answer.questionId,
+            answerText: answer.answerText,
+            isCorrect: answer.isCorrect
+        }),
+    })
+        .then(
+            console.log("answer added")
+        )
+        .catch(error => {
+            console.error('Error posting section:', error);
+            // Display an error message to the user interface
+        });
 }
 
 export const editQuiz = (quizId, quizName, quizDescription, setQuizes) => {
