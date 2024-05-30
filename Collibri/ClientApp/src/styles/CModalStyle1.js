@@ -1,10 +1,10 @@
-export const CModalStyle = {
+export const CModalStyle1 = {
   modal: {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '25%',
+    width: '50%',
     p: 2,
     bgcolor: '#DEFEF5',
     borderRadius: 2,
@@ -24,13 +24,6 @@ export const CModalStyle = {
     color: '#316C44',
     backgroundColor: '#B9F5D9',
     margin: '2%',
-    borderRadius: 3,
-  },
-  buttons1: {
-    color: '#316C44',
-    backgroundColor: '#B9F5D9',
-    margin: '2%',
-    padding: '10%',
     borderRadius: 3,
   },
   text: {

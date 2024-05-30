@@ -28,6 +28,8 @@ import {
 } from "../../styles/tableListStyle";
 import { useSelector } from "react-redux";
 import { RoomLayoutStyle } from "../../styles/RoomLayoutStyle";
+import AddQuestionModal from '../Modals/AddQuestionModal';
+import PlayModal from '../Modals/PlayModal';
 
 
 
@@ -39,6 +41,7 @@ const SectionsContainer = ({ sections, setSections, setSectionId, quizes, setQui
     const currentRoom = useSelector((state) => state.rooms.currentRoom);
     const userInformation = useSelector((state) => state.user);
 
+    const [addQuestionModal, setAddQuestionModal] = useState(false);
     const [selectedQuiz, setSelectedQuiz] = useState(null);
     const [editQuizModal, setEditQuizModal] = useState(false);
     const [playModal, setPlayModal] = useState(false);
@@ -61,6 +64,16 @@ const SectionsContainer = ({ sections, setSections, setSectionId, quizes, setQui
         if (sections.length > 0) {
             setSectionId(0);
         }
+    }
+
+    const handleOpenPlayModal = (row) => {
+        setSelectedQuiz(row);
+        setPlayModal(true);
+    }
+
+    const handleOpenAddQuestionsModal = (row) => {
+        setSelectedQuiz(row);
+        setAddQuestionModal(true);
     }
 
     const handleOpenEditQuizModal = (row) => {
@@ -150,14 +163,14 @@ const SectionsContainer = ({ sections, setSections, setSectionId, quizes, setQui
                                         >
                                             {(isOwner() && isHovered === row.id) && (
                                                 <IconButton sx={editButtonStyle} onClick={() => {
-                                                    //handleOpenPlayQuizModal(row)
+                                                    handleOpenPlayModal(row)
                                                 }}>
                                                     <PlayArrowIcon style={{ fontSize: 25 }} />
                                                 </IconButton>
                                             )}
                                             {(isOwner() && isHovered === row.id) && (
                                                 <IconButton sx={editButtonStyle} onClick={() => {
-                                                    //handleOpenEditQuestionsModal(row)
+                                                    handleOpenAddQuestionsModal(row)
                                                 }}>
                                                     <QuestionMarkIcon style={{ fontSize: 25 }} />
                                                 </IconButton>
@@ -185,6 +198,8 @@ const SectionsContainer = ({ sections, setSections, setSectionId, quizes, setQui
             <UpdateSectionModal section={section} sections={sections} updateModal={updateModal}
                 setUpdateModal={setUpdateModal} updateSection={handleUpdateSection} />
             <EditQuizModal selectedQuiz={selectedQuiz} editQuizModal={editQuizModal} setEditQuizModal={setEditQuizModal} setQuizes={setQuizes} />
+            <AddQuestionModal selectedQuiz={selectedQuiz} addQuestionModal={addQuestionModal} setAddQuestionModal={setAddQuestionModal} />
+            <PlayModal selectedQuiz={selectedQuiz} playModal={playModal} setPlayModal={setPlayModal}/>
         </>
     );
 };
