@@ -35,3 +35,4 @@ test_job:
     - echo "Running .NET tests..."
     - dotnet restore
     - dotnet test "$TEST_PROJECT"  
+
