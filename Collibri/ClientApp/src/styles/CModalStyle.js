@@ -26,6 +26,13 @@ export const CModalStyle = {
     margin: '2%',
     borderRadius: 3,
   },
+  buttons1: {
+    color: '#316C44',
+    backgroundColor: '#B9F5D9',
+    margin: '2%',
+    padding: '10%',
+    borderRadius: 3,
+  },
   text: {
     fontFamily: 'Segoe UI semibold'
   },

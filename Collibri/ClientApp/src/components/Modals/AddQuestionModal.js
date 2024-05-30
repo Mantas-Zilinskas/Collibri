@@ -6,32 +6,6 @@ import { CModalStyle } from "../../styles/CModalStyle";
 
 const AddQuestionModal = (props) => {
 
-    /*const QuizName = useRef(null);
-    const QuizDescription = useRef(null);
-    const [isNameEmptyError, setIsNameEmptyError] = useState(false);
-    const [isDescriptionEmptyError, setIsDescriptionEmptyError] = useState(false);
-
-    const handleClose = () => {
-        setIsDescriptionEmptyError(false);
-        setIsNameEmptyError(false);
-        props.setEditQuizModal(false);
-    }
-
-    function handleAddQuestion() {
-        if (QuizName.current.value.trim() === '') {
-            setIsNameEmptyError(true);
-            return;
-        } else if (QuizDescription.current.value.trim() === '') {
-            setIsDescriptionEmptyError(true);
-            setIsNameEmptyError(false);
-            return;
-        } else {
-            setIsDescriptionEmptyError(false);
-            setIsNameEmptyError(false);
-            editQuiz(props.selectedQuiz.id, QuizName.current.value.trim(), QuizDescription.current.value.trim(), props.setQuizes);
-            handleClose();
-        }
-    }*/
     const QuestionName = useRef(null);
     const QuestionText = useRef(null);
     const AnswerA = useRef(null);
@@ -50,7 +24,7 @@ const AddQuestionModal = (props) => {
     const [AnswerCEmpty, setAnswerCEmpty] = useState(false);
     const [AnswerDEmpty, setAnswerDEmpty] = useState(false);
 
-    const handleAddQuestion = async () => {
+    const handleAddQuestion = () => {
         setQuestionNameEmpty(false);
         setQuestionTextEmpty(false);
         setAnswerAEmpty(false);
@@ -84,17 +58,17 @@ const AddQuestionModal = (props) => {
         let answerC = completeAnswer(AnswerC.current.value.trim(), BoxC.current.checked, question.id);
         let answerD = completeAnswer(AnswerD.current.value.trim(), BoxD.current.checked, question.id);
         
-        postQuestion(question);
-        await postAnswer(answerA);
-        await postAnswer(answerB);
-        await postAnswer(answerC);
-        await postAnswer(answerD);
+        for (var i = 0; (postQuestion(question) == false) && (i < 5); i++);
+        for (var i = 0; (postAnswer(answerA) == false) && (i < 5); i++);
+        for (var i = 0; (postAnswer(answerB) == false) && (i < 5); i++);
+        for (var i = 0; (postAnswer(answerC) == false) && (i < 5); i++);
+        for (var i = 0; (postAnswer(answerD) == false) && (i < 5); i++);
 
         handleClose();
     }
 
-    async function postQuestion(quiz) {
-        await addQuestion(quiz);
+    function postQuestion(quiz) {
+        addQuestion(quiz);
     }
 
     async function postAnswer(answer) {
@@ -183,7 +157,8 @@ const AddQuestionModal = (props) => {
                 </Grid>
                 <Grid container spacing={1}>
                     <Grid item xs={2}>
-                        <FormControlLabel control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 42 } }} name="A" inputRef={BoxA} />} label={<Typography variant="h5">A</Typography>} />
+                        <FormControlLabel control={
+                            <Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 42 } }} name="A" inputRef={BoxA} />} label={<Typography variant="h5">A</Typography>} />
                     </Grid>
                     <Grid item xs={10}>
                         <TextField
@@ -248,26 +223,8 @@ const AddQuestionModal = (props) => {
                     </Grid>
                 </Grid>
             </Box>
-            {/*{<TextField fullWidth margin="normal" id="QuizDescription" label="QuizDescription" variant="outlined"
-                error={isDescriptionEmptyError}
-                inputRef={QuizDescription}
-                helperText={
-                    isDescriptionEmptyError
-                        ? 'Quiz description cannot be empty'
-                        : ' '
-                }
-                margin="normal" />}*/}
             <Divider />
         </CModal1>
-        /*<Modal open={props.editQuizModal} onClose={handleClose}>
-            <Box sx={DocumentModalStyles.modal}>
-                <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'end', marginBottom: '0%' }}>
-                    <IconButton onClick={handleClose} sx={DocumentModalStyles.closeButton}>
-                        <CloseIcon />
-                    </IconButton>
-                </Box>
-            </Box>
-        </Modal>*/
     );
 }
 

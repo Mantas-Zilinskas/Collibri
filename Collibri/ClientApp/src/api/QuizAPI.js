@@ -1,4 +1,6 @@
-﻿export const getQuizes = (setQuizes, roomId) => {
+﻿import $ from 'jquery';
+
+export const getQuizes = (setQuizes, roomId) => {
     fetch('https://localhost:7176/api/Quiz/GetAllByRoomId/' + roomId)
         .then(response => response.json())
         .then(data => {
@@ -55,6 +57,8 @@ export const createQuiz = (quizName, quizDescription, roomId, setQuizes) => {
 }
 
 export const addQuestion = (question) => {
+    /*var status;
+
     fetch('https://localhost:7176/api/Question/Add', {
         method: 'POST',
         headers: {
@@ -68,17 +72,39 @@ export const addQuestion = (question) => {
             type: question.type
         }),
     })
-        .then(
-            console.log("question added")
+        .then(() => {
+            console.log("question added");
+            status = true;
+        }
         )
         .catch(error => {
             console.error('Error posting section:', error);
+            status = false;
             // Display an error message to the user interface
         });
+    return status;*/
+    var status
+    $.ajax({
+        url: 'https://localhost:7176/api/Question/Add',
+        type: 'POST',
+        contentType: 'application/json',
+        async: false,
+        data: JSON.stringify(question),
+        success: function (data) {
+            status = true;
+        },
+        error: function (xhr, status, error) {
+            status = false;
+        }
+
+    });
+    return status;
 }
 
-export const addAnswer = async (answer) => {
-    await fetch('https://localhost:7176/api/Answer/Add', {
+export const addAnswer = (answer) => {
+    /*var status;
+
+    fetch('https://localhost:7176/api/Answer/Add', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -90,13 +116,34 @@ export const addAnswer = async (answer) => {
             isCorrect: answer.isCorrect
         }),
     })
-        .then(
-            console.log("answer added")
+        .then(() => {
+            console.log("answer added");
+            status = true;
+        }
         )
         .catch(error => {
             console.error('Error posting section:', error);
+            status = false;
             // Display an error message to the user interface
         });
+    return status;*/
+
+    var status
+    $.ajax({
+        url: 'https://localhost:7176/api/Answer/Add',
+        type: 'POST',
+        contentType: 'application/json',
+        async: false,
+        data: JSON.stringify(answer),
+        success: function (data) {
+            status = true;
+        },
+        error: function (xhr, status, error) {
+            status = false;
+        }
+
+    });
+    return status;
 }
 
 export const editQuiz = (quizId, quizName, quizDescription, setQuizes) => {
@@ -122,4 +169,58 @@ export const editQuiz = (quizId, quizName, quizDescription, setQuizes) => {
             // Display an error message to the user interface
         });
 
+}
+
+export const getQuestions = (quizId) => {
+    /*var questions
+    await fetch('https://localhost:7176/api/Question/GetAllByQuizId/' + quizId)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            questions = data;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+    return questions;*/
+
+    var questions;
+        $.ajax({
+            url: 'https://localhost:7176/api/Question/GetAllByQuizId/' + quizId,
+            method: 'GET',
+            async: false,
+            success: (result) => {
+                questions = result;
+            },
+            error: (error) => {
+                questions = false;
+            }
+        });
+    return questions;
+}
+
+export const getAnswers = (questionId) => {
+    /*var answers
+    fetch('https://localhost:7176/api/Answer/GetAllByQuestionId/' + questionId)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            answers = data;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+    return answers;*/
+
+    var questions;
+    $.ajax({
+        url: 'https://localhost:7176/api/Answer/GetAllByQuestionId/' + questionId,
+        method: 'GET',
+        async: false,
+        success: (result) => {
+            questions = result;
+        },
+        error: (error) => {
+            questions = false;
+        }
+    });
+    return questions;
 }

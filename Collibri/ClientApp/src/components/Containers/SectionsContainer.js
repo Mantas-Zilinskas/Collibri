@@ -29,6 +29,7 @@ import {
 import { useSelector } from "react-redux";
 import { RoomLayoutStyle } from "../../styles/RoomLayoutStyle";
 import AddQuestionModal from '../Modals/AddQuestionModal';
+import PlayModal from '../Modals/PlayModal';
 
 
 
@@ -63,6 +64,11 @@ const SectionsContainer = ({ sections, setSections, setSectionId, quizes, setQui
         if (sections.length > 0) {
             setSectionId(0);
         }
+    }
+
+    const handleOpenPlayModal = (row) => {
+        setSelectedQuiz(row);
+        setPlayModal(true);
     }
 
     const handleOpenAddQuestionsModal = (row) => {
@@ -157,7 +163,7 @@ const SectionsContainer = ({ sections, setSections, setSectionId, quizes, setQui
                                         >
                                             {(isOwner() && isHovered === row.id) && (
                                                 <IconButton sx={editButtonStyle} onClick={() => {
-                                                    //handleOpenPlayQuizModal(row)
+                                                    handleOpenPlayModal(row)
                                                 }}>
                                                     <PlayArrowIcon style={{ fontSize: 25 }} />
                                                 </IconButton>
@@ -192,7 +198,8 @@ const SectionsContainer = ({ sections, setSections, setSectionId, quizes, setQui
             <UpdateSectionModal section={section} sections={sections} updateModal={updateModal}
                 setUpdateModal={setUpdateModal} updateSection={handleUpdateSection} />
             <EditQuizModal selectedQuiz={selectedQuiz} editQuizModal={editQuizModal} setEditQuizModal={setEditQuizModal} setQuizes={setQuizes} />
-            <AddQuestionModal selectedQuiz={selectedQuiz} addQuestionModal={addQuestionModal} setAddQuestionModal={setAddQuestionModal}/>
+            <AddQuestionModal selectedQuiz={selectedQuiz} addQuestionModal={addQuestionModal} setAddQuestionModal={setAddQuestionModal} />
+            <PlayModal selectedQuiz={selectedQuiz} playModal={playModal} setPlayModal={setPlayModal}/>
         </>
     );
 };
