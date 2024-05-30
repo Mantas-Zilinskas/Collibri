@@ -1,0 +1,277 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\University\\PSI\\Collibri\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|c:\\university\\psi\\collibri\\collibri.tests\\integrationtests\\customwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|solutionrelative:collibri.tests\\integrationtests\\customwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49711352-2B7A-4DEB-8607-9F3FA5D0F822}|Collibri\\Collibri.csproj|c:\\university\\psi\\collibri\\collibri\\collibri.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{49711352-2B7A-4DEB-8607-9F3FA5D0F822}|Collibri\\Collibri.csproj|solutionrelative:collibri\\collibri.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|c:\\university\\psi\\collibri\\collibri.tests\\integrationtests\\quizcustomwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|solutionrelative:collibri.tests\\integrationtests\\quizcustomwebapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|c:\\university\\psi\\collibri\\collibri.tests\\integrationtests\\posts\\postcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|solutionrelative:collibri.tests\\integrationtests\\posts\\postcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|c:\\university\\psi\\collibri\\quiz api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|solutionrelative:quiz api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|c:\\university\\psi\\collibri\\quiz api\\controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|solutionrelative:quiz api\\controllers\\quizcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|c:\\university\\psi\\collibri\\collibri.tests\\integrationtests\\quiz\\quizcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|solutionrelative:collibri.tests\\integrationtests\\quiz\\quizcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49711352-2B7A-4DEB-8607-9F3FA5D0F822}|Collibri\\Collibri.csproj|c:\\university\\psi\\collibri\\collibri\\clientapp\\src\\api\\quizapi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{49711352-2B7A-4DEB-8607-9F3FA5D0F822}|Collibri\\Collibri.csproj|solutionrelative:collibri\\clientapp\\src\\api\\quizapi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49711352-2B7A-4DEB-8607-9F3FA5D0F822}|Collibri\\Collibri.csproj|c:\\university\\psi\\collibri\\collibri\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49711352-2B7A-4DEB-8607-9F3FA5D0F822}|Collibri\\Collibri.csproj|solutionrelative:collibri\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|c:\\university\\psi\\collibri\\quiz api\\dtos\\quizdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|solutionrelative:quiz api\\dtos\\quizdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|c:\\university\\psi\\collibri\\quiz api\\quiz_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|solutionrelative:quiz api\\quiz_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|c:\\university\\psi\\collibri\\collibri.tests\\repositories\\files\\filerepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|solutionrelative:collibri.tests\\repositories\\files\\filerepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|c:\\university\\psi\\collibri\\collibri.tests\\repositories\\files\\filerepositorytestdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D18782F-CC2C-4E91-BAEF-1B00299531D7}|Collibri.Tests\\Collibri.Tests.csproj|solutionrelative:collibri.tests\\repositories\\files\\filerepositorytestdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|c:\\university\\psi\\collibri\\quiz api\\quiz_api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A35A0855-F93A-4622-AC4E-75EFDCA5CD5D}|Quiz API\\Quiz_API.csproj|solutionrelative:quiz api\\quiz_api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 209,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomWebApplicationFactory.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\CustomWebApplicationFactory.cs",
+              "RelativeDocumentMoniker": "Collibri.Tests\\IntegrationTests\\CustomWebApplicationFactory.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\CustomWebApplicationFactory.cs",
+              "RelativeToolTip": "Collibri.Tests\\IntegrationTests\\CustomWebApplicationFactory.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T23:41:55.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuizCustomWebApplicationFactory.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\QuizCustomWebApplicationFactory.cs",
+              "RelativeDocumentMoniker": "Collibri.Tests\\IntegrationTests\\QuizCustomWebApplicationFactory.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\QuizCustomWebApplicationFactory.cs",
+              "RelativeToolTip": "Collibri.Tests\\IntegrationTests\\QuizCustomWebApplicationFactory.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T05:11:26.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Collibri",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri\\Collibri.csproj",
+              "RelativeDocumentMoniker": "Collibri\\Collibri.csproj",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri\\Collibri.csproj",
+              "RelativeToolTip": "Collibri\\Collibri.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-30T04:20:58.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Quiz API\\Program.cs",
+              "RelativeDocumentMoniker": "Quiz API\\Program.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Quiz API\\Program.cs",
+              "RelativeToolTip": "Quiz API\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T23:37:15.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QuizControllerIntegrationTests.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\Quiz\\QuizControllerIntegrationTests.cs",
+              "RelativeDocumentMoniker": "Collibri.Tests\\IntegrationTests\\Quiz\\QuizControllerIntegrationTests.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\Quiz\\QuizControllerIntegrationTests.cs",
+              "RelativeToolTip": "Collibri.Tests\\IntegrationTests\\Quiz\\QuizControllerIntegrationTests.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T05:43:35.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QuizController.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Quiz API\\Controllers\\QuizController.cs",
+              "RelativeDocumentMoniker": "Quiz API\\Controllers\\QuizController.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Quiz API\\Controllers\\QuizController.cs",
+              "RelativeToolTip": "Quiz API\\Controllers\\QuizController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T23:58:49.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "QuizAPI.js",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri\\ClientApp\\src\\api\\QuizAPI.js",
+              "RelativeDocumentMoniker": "Collibri\\ClientApp\\src\\api\\QuizAPI.js",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri\\ClientApp\\src\\api\\QuizAPI.js",
+              "RelativeToolTip": "Collibri\\ClientApp\\src\\api\\QuizAPI.js",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-30T05:24:33.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri\\Program.cs",
+              "RelativeDocumentMoniker": "Collibri\\Program.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri\\Program.cs",
+              "RelativeToolTip": "Collibri\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T05:47:42.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "QuizDTO.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Quiz API\\DTOs\\QuizDTO.cs",
+              "RelativeDocumentMoniker": "Quiz API\\DTOs\\QuizDTO.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Quiz API\\DTOs\\QuizDTO.cs",
+              "RelativeToolTip": "Quiz API\\DTOs\\QuizDTO.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T21:58:14.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Quiz_API.csproj",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Quiz API\\Quiz_API.csproj",
+              "RelativeDocumentMoniker": "Quiz API\\Quiz_API.csproj",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Quiz API\\Quiz_API.csproj",
+              "RelativeToolTip": "Quiz API\\Quiz_API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-29T22:15:31.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FileRepositoryTests.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\Repositories\\Files\\FileRepositoryTests.cs",
+              "RelativeDocumentMoniker": "Collibri.Tests\\Repositories\\Files\\FileRepositoryTests.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\Repositories\\Files\\FileRepositoryTests.cs",
+              "RelativeToolTip": "Collibri.Tests\\Repositories\\Files\\FileRepositoryTests.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T00:17:41.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FileRepositoryTestData.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\Repositories\\Files\\FileRepositoryTestData.cs",
+              "RelativeDocumentMoniker": "Collibri.Tests\\Repositories\\Files\\FileRepositoryTestData.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\Repositories\\Files\\FileRepositoryTestData.cs",
+              "RelativeToolTip": "Collibri.Tests\\Repositories\\Files\\FileRepositoryTestData.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T00:17:36.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-05-29T22:15:17.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Quiz_API",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Quiz API\\Quiz_API.csproj",
+              "RelativeDocumentMoniker": "Quiz API\\Quiz_API.csproj",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Quiz API\\Quiz_API.csproj",
+              "RelativeToolTip": "Quiz API\\Quiz_API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-29T22:16:19.568Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 133,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PostControllerIntegrationTests.cs",
+              "DocumentMoniker": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\Posts\\PostControllerIntegrationTests.cs",
+              "RelativeDocumentMoniker": "Collibri.Tests\\IntegrationTests\\Posts\\PostControllerIntegrationTests.cs",
+              "ToolTip": "C:\\University\\PSI\\Collibri\\Collibri.Tests\\IntegrationTests\\Posts\\PostControllerIntegrationTests.cs",
+              "RelativeToolTip": "Collibri.Tests\\IntegrationTests\\Posts\\PostControllerIntegrationTests.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T07:02:59.618Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
